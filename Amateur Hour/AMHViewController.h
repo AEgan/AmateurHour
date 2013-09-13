@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface AMHViewController : UIViewController
+- (IBAction)amHrPressed:(id)sender;
+- (IBAction)notAmHrPressed:(id)sender;
+
+@property (assign, nonatomic) NSInteger amHrBalance;
+@property (assign, nonatomic) NSInteger notAmHrBalance;
+@property (weak, nonatomic) IBOutlet UILabel *amCountLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *notAmCountLabel;
 
 @end
