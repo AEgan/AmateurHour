@@ -19,8 +19,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.amHrBalance = 0;
-    [self.amCountLabel setText:@"Count: 0"];
-    [self.notAmCountLabel setText:@"Count: 0"];
+    self.notAmHrBalance = 0;
+    self.advancedTacticsBalance = 0;
+    [self.amateurHourButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [self.notAmateurHourButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [self.advancedTacticsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [self.amCountLabel setText:[NSString stringWithFormat:@"%ld", (long)self.amHrBalance]];
+    [self.notAmCountLabel setText:[NSString stringWithFormat:@"%ld", (long)self.notAmHrBalance]];
+    [self.advancedTacticsLabel setText:[NSString stringWithFormat:@"%ld", (long)self.advancedTacticsBalance]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,11 +37,16 @@
 
 - (IBAction)amHrPressed:(id)sender {
     self.amHrBalance++;
-    [self.amCountLabel setText:[NSString stringWithFormat:@"Count: %ld", (long)self.amHrBalance]];
+    [self.amCountLabel setText:[NSString stringWithFormat:@"%ld", (long)self.amHrBalance]];
 }
 
 - (IBAction)notAmHrPressed:(id)sender {
     self.notAmHrBalance++;
-    [self.notAmCountLabel setText:[NSString stringWithFormat:@"Count: %ld", (long)self.notAmHrBalance]];
+    [self.notAmCountLabel setText:[NSString stringWithFormat:@"%ld", (long)self.notAmHrBalance]];
+}
+
+- (IBAction)advancedTacticsPressed:(id)sender {
+    self.advancedTacticsBalance++;
+    [self.advancedTacticsLabel setText:[NSString stringWithFormat:@"%ld", (long)self.advancedTacticsBalance]];
 }
 @end
